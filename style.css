@@ -1,0 +1,265 @@
+/* Reset & base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #1a1a2e;
+  padding: 1rem;
+  text-align: center;
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  
+}
+
+header h1 {
+  margin: 0;
+  flex: 1;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* Game container */
+.game-container {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Buttons */
+.choices {
+  margin: 2rem 0;
+}
+.choice {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #00f0ff;
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.choice:hover {
+  background: #00f0ff;
+  color: #000;
+  box-shadow: 0 0 15px #00f0ff;
+}
+
+/* Results display */
+.results {
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+}
+#result {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+#user-score.pop,
+#computer-score.pop,
+#tie.pop {
+  animation: pop 0.3s ease;
+}
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Reset button */
+#resetBtn {
+  background: #ff4c60;
+  border: none;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#resetBtn:hover {
+  background: #ff6e7f;
+  box-shadow: 0 0 12px #ff6e7f;
+}
+
+/* Footer */
+footer {
+  background: #1a1a2e;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Add glow to score text */
+#user-score,
+#computer-score,
+#tie {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 0 2px #00ffd0;
+  display: inline-block;
+}
+
+/* Enhance header glow */
+header h1 {
+  text-shadow: 0 0 2px #00ffd0, 0 0 5px #00ffd0;
+}
+
+/* Add animation to result */
+#result {
+  transition: all 0.3s ease;
+}
+
+.choice-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-left: 10px;
+  vertical-align: middle;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+
+#result.win {
+  color: #00ff00;
+  text-shadow: 0 0 8px #00ff00;
+}
+
+#result.lose {
+  color: #ff4c4c;
+  text-shadow: 0 0 8px #ff4c4c;
+}
+
+#result.tie {
+  color: #cccccc;
+  text-shadow: 0 0 6px #aaa;
+}
+
+/* Button pulse on hover */
+.choice:hover {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 208, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 208, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 208, 0.5);
+  }
+}
+
+/* Result fade-in animation */
+@keyframes fadeResult {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#result.animate {
+  animation: fadeResult 0.3s ease;
+}
+
+/* 📱 Mobile (max width 600px) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+  }
+
+  .game-container {
+    padding: 1rem;
+  }
+
+  .choice {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  .results {
+    font-size: 1rem;
+  }
+
+  #result {
+    font-size: 1.2rem;
+  }
+
+  .choice-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #resetBtn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* 💻 Tablet (601px to 900px) */
+@media (max-width: 900px) and (min-width: 601px) {
+  .choice {
+    padding: 1rem 1.8rem;
+    font-size: 1.1rem;
+  }
+
+  .scoreboard {
+    font-size: 1.1rem;
+  }
+
+  #resetBtn {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .choice-img {
+    width: 50px;
+    height: 50px;
+  }
+}
