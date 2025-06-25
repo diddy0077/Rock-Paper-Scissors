@@ -146,6 +146,44 @@ header h1 {
   box-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
+summary {
+  background: whitesmoke;
+  color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  margin: 1rem auto;
+  max-width: 600px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+summary:hover {
+  background: #f0f0f0;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.7);
+}
+
+details ul {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  transition: background 0.3s ease, padding 0.3s ease;
+  list-style: none;
+}
+
+details {
+  margin: 1rem auto;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  padding: 1rem;
+}
+
+details ul li:hover {
+  background: rgba(0, 240, 255, 0.1);
+  padding-left: 1rem;
+}
+
 
 #result.win {
   color: #00ff00;
